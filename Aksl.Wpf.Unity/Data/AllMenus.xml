@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuItem Id="0"
+          Title="根"
+          Name="All"
+          Level="1" >
+	<MenuItem Id="1"
+			  Name="Home"
+			  Title="主页"
+			  Level="2"
+			  IsHome="true"
+			  IsSelectedOnInitialize="True"
+			  IconKind="Home"
+			  ItemType="Item"
+			  ModuleName="HomeModule"
+		      ViewName="Aksl.Modules.Home.Views.HomeView,Aksl.Modules.Home" />
+	<MenuItem Id="0"
+			  Name="MenuSub"
+			  Title="Menu"
+			  Level="2"
+			  ItemType="Item"
+		      IsCacheable="True"
+			  ModuleName="MenuSubModule"
+		      RequrePermissons="True"
+			  ViewName="Aksl.Modules.MenuSub.Views.MenuSubHubView,Aksl.Modules.MenuSub"
+			  NavigationName="Industry">
+	</MenuItem>
+	<MenuItem Id="0"
+		      Name="HamburgerMenu"
+		      Title="Hamburger"
+		      Level="2"
+			  IconKind="HamburgerMenu"
+		      ItemType="Item"
+		  IsCacheable="True"
+		      ModuleName="HamburgerMenuModule"
+		      ViewName="Aksl.Modules.HamburgerMenu.Views.HamburgerMenuHubView,Aksl.Modules.HamburgerMenu"
+		      NavigationName="Industry">
+	</MenuItem>
+	<MenuItem Id="0"
+		      Name="HamburgerMenuTreeBarView"
+	     	  Title="HamburgerTreeBar"
+		      Level="2"
+	          IconKind="HamburgerMenuBack"
+		      ItemType="Item"
+		      IsCacheable="True"
+		      ModuleName="HamburgerMenuTreeBarViewModule"
+		      ViewName="Aksl.Modules.HamburgerMenuTreeBar.Views.HamburgerMenuTreeBarHubView,Aksl.Modules.HamburgerMenuTreeBar"
+		      NavigationName="Industry">
+	</MenuItem>
+	<MenuItem Id="0"
+	          Name="HamburgerMenuNavigationBar"
+	          Title="HamburgerNavigationBar"
+	          Level="2"
+		      IconKind="HamburgerMinus"
+	          ItemType="Item"
+	          IsCacheable="True"
+	          ModuleName="HamburgerMenuNavigationBarModule"
+	          ViewName="Aksl.Modules.HamburgerMenuNavigationBar.Views.HamburgerMenuNavigationBarHubView,Aksl.Modules.HamburgerMenuNavigationBar "
+	          NavigationName="Industry">
+	</MenuItem>
+</MenuItem>

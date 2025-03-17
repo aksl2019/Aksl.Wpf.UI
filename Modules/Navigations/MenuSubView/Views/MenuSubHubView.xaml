@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Aksl.Modules.MenuSub.Views.MenuSubHubView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:inf="clr-namespace:Aksl.Infrastructure;assembly=Aksl.Infrastructure"
+             xmlns:views="clr-namespace:Aksl.Modules.MenuSub.Views"
+             mc:Ignorable="d"
+             Name="hierarchicalMenuSubView"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <!--<behaviors:Interaction.Triggers>
+        <behaviors:EventTrigger EventName="Loaded"
+                                SourceObject="{Binding ElementName=HierarchicalMenuView}">
+            <behaviors:CallMethodAction TargetObject="{Binding}"
+                                        MethodName="HierarchicalMenuViewLoaded" />
+        </behaviors:EventTrigger>
+    </behaviors:Interaction.Triggers>-->
+   
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<views:MenusView DataContext="{Binding Path=Menus}" />-->
+        <views:HierarchicalMenusView Grid.Row="0"
+                                     DataContext="{Binding Path=HierarchicalMenus}"
+                                     HorizontalAlignment="Center"
+                                     VerticalContentAlignment="Center"
+                                     Margin="1,1,1,1" />
+        <!--<views:ToolBarView DataContext="{Binding Path=Menus}" />-->
+        <Separator Grid.Row="1"
+                   Margin="0,1,0,0"
+                   Height="8"
+                   BorderBrush="#193441" />
+        <!--<Border Margin="0"
+                Background="WhiteSmoke"
+                HorizontalAlignment="Stretch"
+                BorderThickness="2"
+                CornerRadius="5"
+                BorderBrush="Black">-->
+            <ContentControl x:Name="menuSubWorkspaceRegion"
+                        Grid.Row="2"
+                        Margin="2"
+                        prism:RegionManager.RegionName="{x:Static inf:RegionNames.MenuSubWorkspaceRegion}">
+            <ContentControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </ContentControl.RenderTransform>
+            </ContentControl>
+        <!--</Border>-->
+    </Grid>
+   
+
+</UserControl>

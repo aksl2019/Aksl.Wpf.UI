@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Aksl.Modules.MenuSub.Views.MenuItemCommandView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <Style x:Key="labelStyle"
+               TargetType="{x:Type Label}">
+            <Setter Property="Content"
+                    Value="{Binding Title}" />
+            <Setter Property="FontWeight"
+                    Value="Bold" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelected,Mode=TwoWay}"
+                             Value="True">
+                    <Setter Property="Background"
+                            Value="Honeydew"/>
+                    <Setter Property="FontSize"
+                            Value="18" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsSelected,Mode=TwoWay}"
+                             Value="False">
+                    <Setter Property="FontSize"
+                            Value="20" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <!--<Border Background="WhiteSmoke"
+            BorderBrush="LightGray"
+            BorderThickness="2"
+            CornerRadius="2"
+            Width="100"
+            Height="30">
+        <Button Content="{Binding Path=Title,Mode=OneWay}"
+            Command="{Binding Path=BuildTreeBarCommand}"
+            Width="80"
+            Height="30"
+            VerticalAlignment="Center" />
+    </Border>-->
+
+
+    <!--<MenuItem Header="{Binding Path=Title,Mode=OneWay}"
+              Command="{Binding Path=BuildTreeBarCommand}"
+             />-->
+
+    <!--<Border Background="WhiteSmoke"
+            BorderBrush="LightGray"
+            BorderThickness="2"
+            CornerRadius="2"
+            Width="100"
+            Height="40">
+        <TextBlock Text="{Binding Path=Title,Mode=OneWay}"
+                   FontSize="16"
+                   FontWeight="Heavy"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+    </Border>-->
+
+    <StackPanel Orientation="Horizontal">
+        <Label Width="120"
+               Height="40"
+               Style="{StaticResource labelStyle}" 
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center">
+        </Label>
+    </StackPanel>
+</UserControl>

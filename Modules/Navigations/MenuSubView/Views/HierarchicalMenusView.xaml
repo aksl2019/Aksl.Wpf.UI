@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Aksl.Modules.MenuSub.Views.HierarchicalMenusView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dts="clr-namespace:Aksl.Modules.MenuSub.DataTemplateSelectors"
+             xmlns:views="clr-namespace:Aksl.Modules.MenuSub.Views"
+             xmlns:viewmodels="clr-namespace:Aksl.Modules.MenuSub.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="menuSource"
+                              Source="{Binding Path=TopHierarchicalMenuItems}" />
+
+        <HierarchicalDataTemplate x:Key="hierarchicalMenuSeparatorDataTemplate"
+                                  ItemsSource="{Binding Children}">
+            <views:MenuItemSeparatorView />
+        </HierarchicalDataTemplate>
+
+        <HierarchicalDataTemplate x:Key="hierarchicalMenuDataTemplate"
+                                  ItemsSource="{Binding Children}"
+                                  DataType="{x:Type viewmodels:HierarchicalMenuItemViewModel}">
+            <views:HierarchicalMenuItemView />
+        </HierarchicalDataTemplate>
+
+        <dts:HierarchicalMenuDataTemplateSelector  x:Key="hierarchicalMenuDataTemplateSelector"
+                                                   CommandTemplate="{StaticResource hierarchicalMenuDataTemplate}"
+                                                   SeparatorTemplate="{StaticResource hierarchicalMenuSeparatorDataTemplate}" />
+    </UserControl.Resources>
+
+    <Menu x:Name="mainMenuSub"
+          IsMainMenu="True"
+          ItemsSource="{Binding Source={StaticResource menuSource}}"
+          ItemTemplateSelector="{StaticResource hierarchicalMenuDataTemplateSelector}">
+    </Menu>
+
+</UserControl>
