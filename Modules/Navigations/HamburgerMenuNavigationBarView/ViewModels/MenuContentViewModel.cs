@@ -62,11 +62,13 @@ namespace Aksl.Modules.HamburgerMenuNavigationBar.ViewModels
         }
         #endregion
 
+        #region Clear Method
         internal void ClearSelectedMenuItem()
         {
             SelectedMenuItem.IsSelected = false;
             SelectedMenuItem = null;
         }
+        #endregion
 
         #region Create MenuItem ViewModel Method
         internal void CreateMenuItemViewModels()

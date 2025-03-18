@@ -19,11 +19,6 @@ namespace Aksl.Modules.HamburgerMenuNavigationBar.ViewModels
         #endregion
 
         #region Constructors
-        //public MenuItemViewModel(MenuItem menuItem)
-        //{
-        //    _menuItem = menuItem;
-        //}
-
         public MenuItemViewModel(IEventAggregator eventAggregator, int groupIndex, int index, MenuItem menuItem)
         {
             _eventAggregator = eventAggregator;

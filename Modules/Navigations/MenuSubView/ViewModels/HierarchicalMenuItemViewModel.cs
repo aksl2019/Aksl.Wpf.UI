@@ -112,13 +112,6 @@ namespace Aksl.Modules.MenuSub.ViewModels
                 {
                     IsSelected = true; 
                 }
-
-                //if (!IsSelected)
-                //{
-                //    IsSelected = true;
-
-                //    _eventAggregator.GetEvent<OnContentChangedViewEvent>().Publish(new OnContentChangedViewEvent { CurrentMenuItem = _menuItem });
-                //}
             }
         }
         #endregion
